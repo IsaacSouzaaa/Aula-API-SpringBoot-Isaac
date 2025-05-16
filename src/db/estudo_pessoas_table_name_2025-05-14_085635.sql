@@ -29,3 +29,13 @@ INSERT INTO table_name (name, telefone, endereco, imagem_perfil) VALUES
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2025-05-14  8:56:50
+
+Use estudo_pessoas
+
+CREATE TABLE produtos (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    preco DECIMAL(10,2) NOT NULL,
+    quantidade_estoque INT NOT NULL,
+    descricao TEXT
+);

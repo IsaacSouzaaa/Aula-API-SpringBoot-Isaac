@@ -39,3 +39,20 @@ CREATE TABLE produtos (
     quantidade_estoque INT NOT NULL,
     descricao TEXT
 );
+
+CREATE TABLE compras (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    data_compra DATETIME NOT NULL,
+    table_name_id BIGINT NOT NULL,
+    FOREIGN KEY (table_name_id) REFERENCES table_name(id)
+);
+
+CREATE TABLE itens_compra (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    compra_id BIGINT NOT NULL,
+    produto_id BIGINT NOT NULL,
+    quantidade INT NOT NULL,
+    preco_unitario DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (compra_id) REFERENCES compras(id),
+    FOREIGN KEY (produto_id) REFERENCES produtos(id)
+);
